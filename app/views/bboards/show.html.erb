@@ -1,0 +1,23 @@
+<h1 class="ui header"><%= @bboard.title %></h1>
+<h2 class="ui header">Genre: <%= @bboard.genre %></h2>
+<hr />
+
+<div class="ui vertical text menu">
+  <div class="header item">Sort By</div>
+    <a class="active item">
+      <%= link_to 'By Artists', bboard_artists_path(@bboard) %>
+    </a>
+    <a class="item">
+      <%= link_to 'By Songs', bboard_songs_path(@bboard) %>
+    </a>
+  </div>
+</div>
+
+<div class="extra content">
+  <div class="ui button">
+      <%= link_to 'Edit', edit_bboard_path(@bboard) %>
+  </div>
+  <div class="ui button">
+    <%= link_to 'Back', bboards_path %>
+  </div>
+</div>
