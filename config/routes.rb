@@ -5,9 +5,6 @@ Rails.application.routes.draw do
     resources :artists
   end
 
-  resources :bboards do
-    resources :songs
-  end
 
   resources :artists do
     resources :songs

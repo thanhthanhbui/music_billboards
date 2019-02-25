@@ -11,26 +11,24 @@ class SongsController < ApplicationController
 
   def new
     @song = @artist.songs.new
-    render partial: "form"
   end
 
   def create
     @song = @artist.songs.new(song_params)
     
     if @song.save
-      redirect_to [@artist, @song]
+      redirect_to artist_songs_path(@artist)
     else
       render :new
     end
   end
 
   def edit
-    render partial: "form"
   end
 
   def update
     if @song.update(song_params)
-      redirect_to [@artist, @song]
+      redirect_to artist_song_path(@artist)
     else
       render :edit
     end
@@ -38,7 +36,7 @@ class SongsController < ApplicationController
 
   def destroy
     @song.destroy
-    redirect_to artist_songs_path
+    redirect_to artist_songs_path(@artist)
   end
 
   private

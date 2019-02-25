@@ -1,6 +1,6 @@
 class Artist < ApplicationRecord
   belongs_to :bboard
-  has_many :songs
+  has_many :songs, dependent: :destroy
 
   def full_name
     "#{self.first_name} #{self.last_name}"

@@ -1,6 +1,6 @@
 <h1>Edit Artist</h1>
 
-<%= render "form", artist: @artist %>
-
-<%= link_to "Show", bboard_artist_path(@artist) %> |
-<%= link_to "Back", bboard_artists_path %>
+<%= render "form", bboard: @bboard, artist: @artist %>
+<br />
+<%= link_to "Show", bboard_artist_path([@bboard, @artist]) %> |
+<%= link_to "Back", bboard_artists_path(@bboard) %>

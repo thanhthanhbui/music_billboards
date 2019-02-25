@@ -1,7 +1,7 @@
 <h1 class="ui header"><%= @artist.full_name %></h1>
 <div class="ui card">
   <div class="image">
-    <img src="https://robohash.org/<%= artist.avatar %>?set=set4" />
+    <img src="https://robohash.org/<%= @artist.avatar %>?set=set4" />
   </div>
   <div class="content">
     <%= link_to 'View Songs', artist_songs_path(@artist) %>
@@ -10,9 +10,9 @@
 
 <div class="extra content">
   <div class="ui button">
-      <%= link_to 'Edit', edit_bboard_artist_path([@bboard, @artist]) %>
+      <%= link_to 'Edit Artist', edit_bboard_artist_path([@bboard, @artist]) %>
   </div>
   <div class="ui button">
-    <%= link_to 'Back', bboard_artists_path(@bboard) %>
+    <%= link_to 'Back to Artists', bboard_artists_path(@bboard) %>
   </div>
 </div>

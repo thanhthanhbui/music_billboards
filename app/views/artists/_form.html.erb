@@ -1,4 +1,4 @@
-<%= form_with(model: @artist, local: true, class: "ui form") do |f| %>
+<%= form_with(model: [@bboard, @artist], local: true, class: "ui form") do |f| %>
   <div class="field">
     <%= f.label :first_name %>
     <%= f.text_field :first_name, required: true, placeholder: "First Name", autofocus: true %>
@@ -11,5 +11,5 @@
     <%= f.label :avatar %>
     <%= f.text_field :avatar, required: true, placeholder: "Avatar" %>
   </div>
-  <%= f.submit "Submit" %>
+  <%= f.submit "Submit", class: "ui blue button" %>
 <% end %>

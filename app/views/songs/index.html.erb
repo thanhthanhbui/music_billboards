@@ -1,43 +1,26 @@
 <h1 class="ui header">Songs</h1>
 <%= link_to 'Add a new Song', new_artist_song_path(@artist) %>
+<br />
 <div class="ui divider"></div>
-
-# <table class="ui striped table">
-#   <thead>
-#     <tr class="center aligned">
-#       <th colspan="4"></th>
-#     </tr>
-#   </thead>
-
-#   <tbody>
-#     <% @songs.each do |song| %>
-#       <tr class="center aligned">
-#         <td><%= link_to song.title, [@artist, song] %></td>  
-#         <td><%= link_to 'Show', artist_song_path(@artist) %></td>
-#         <td><%= link_to 'Edit', edit_artist_song_path(artist) %></td>
-#         <td><%= link_to 'Delete', artist_song_path(@artist), method: :delete %></td>
-#       </tr>
-#     <% end %>
-#   </tbody>
-# </table>
-# <br />
 
 <div class="ui grid">
     <% @songs.each do |song| %>
       <div class="sixteen wide mobile eight wide tablet four wide computer column">
         <div class="ui card">
           <div class="content">
-            <%= link_to '#{song.title}', song, class: "header" %>
+            <%= link_to "#{song.title}", [@artist, song], class: "header" %>
           </div>
           <div class="extra content">
             <div class="ui two buttons">
               <div class="ui basic green button">
-                <%= link_to 'Edit', edit_artist_song_path(artist) %>
+                <%= link_to 'Edit', edit_artist_song_path(@artist, song) %>
               </div>  
               <div class="ui basic red button">
-                <%= link_to 'Delete', artist_song_path(@artist), method: :delete, data: { confirm: "Are you sure?" } %>
+                <%= link_to 'Delete', [@artist, song], method: :delete, data: { confirm: "Are you sure?" } %>
               </div>            
             </div>
           </div>
         </div>
       </div>
+    <% end %>
+</div>
